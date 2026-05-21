@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THIS IS QCLAW | Presentasi Tren Teknologi 2026</title>
+  <meta name="description" content="Presentasi interaktif tentang QClaw oleh Tencent, sebuah Personal Local AI Agent & Desktop Automation Assistant.">
+  
+  <!-- Google Fonts: Sora & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="daylight">
+
+  <!-- ==========================================
+       DAYLIGHT OVERLAYS (Sunbeam & Bamboo Shadow)
+       ========================================== -->
+  <div id="daylight-fx">
+    <div class="sunbeam"></div>
+    <!-- Detailed SVG Bamboo Shadow - Organic sway -->
+    <div class="bamboo-shadow">
+      <svg viewBox="0 0 1000 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <!-- Branch 1 -->
+        <path d="M950 0 C900 100, 750 250, 600 350 C550 380, 480 400, 400 420 L405 425 C480 405, 550 385, 602 355 C750 255, 900 105, 950 5 Z" />
+        <!-- Branch 1 Leaves -->
+        <!-- Leaf Group 1 -->
+        <path d="M600 350 C570 330, 480 320, 420 340 C460 360, 520 370, 600 350 Z" />
+        <path d="M580 360 C530 350, 460 360, 410 395 C450 390, 520 380, 580 360 Z" />
+        <path d="M550 375 C490 380, 420 410, 380 460 C410 430, 480 400, 550 375 Z" />
+        <!-- Leaf Group 2 -->
+        <path d="M700 280 C680 250, 600 220, 540 230 C580 250, 640 270, 700 280 Z" />
+        <path d="M680 295 C630 280, 550 270, 490 300 C540 305, 620 305, 680 295 Z" />
+        
+        <!-- Branch 2 (Lower) -->
+        <path d="M1000 150 C900 280, 800 400, 650 500 C580 550, 500 580, 350 610 L355 615 C500 585, 580 555, 652 505 C800 405, 900 285, 1000 155 Z" />
+        <!-- Branch 2 Leaves -->
+        <path d="M650 500 C620 480, 530 465, 470 485 C510 505, 570 515, 650 500 Z" />
+        <path d="M630 512 C580 500, 510 510, 460 545 C500 540, 570 530, 630 512 Z" />
+        <path d="M600 530 C540 535, 470 565, 430 615 C460 585, 530 555, 600 530 Z" />
+        <path d="M780 400 C750 370, 680 350, 620 360 C660 380, 720 395, 780 400 Z" />
+        <path d="M750 420 C700 400, 630 410, 580 440 C620 440, 690 435, 750 420 Z" />
+        
+        <!-- Branch 3 (High Right) -->
+        <path d="M920 -100 C850 50, 700 150, 550 200 C480 220, 380 230, 280 235 L282 240 C380 235, 480 225, 552 205 C700 155, 850 55, 920 -95 Z" />
+        <!-- Branch 3 Leaves -->
+        <path d="M550 200 C520 180, 440 170, 380 190 C420 210, 480 215, 550 200 Z" />
+        <path d="M530 210 C480 195, 410 205, 360 235 C400 230, 470 220, 530 210 Z" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FIXED NAVBAR
+       ========================================== -->
+  <nav id="nav">
+    <div class="nav-container">
+      <div class="logo">
+        <svg viewBox="0 0 100 100" class="logo-icon" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Background Gradient: Dark crimson to black -->
+            <linearGradient id="bgGrad" x1="15%" y1="10%" x2="85%" y2="90%">
+              <stop offset="0%" stop-color="#4C0F0E" />
+              <stop offset="30%" stop-color="#260405" />
+              <stop offset="100%" stop-color="#000000" />
+            </linearGradient>
+
+            <!-- Main Claw Gradient: 3D Red -->
+            <linearGradient id="clawRed" x1="30%" y1="20%" x2="90%" y2="80%">
+              <stop offset="0%" stop-color="#FF5D5D" />
+              <stop offset="50%" stop-color="#E51F20" />
+              <stop offset="100%" stop-color="#7A090B" />
+            </linearGradient>
+
+            <!-- Left Finger (Thumb) Gradient -->
+            <linearGradient id="thumbRed" x1="20%" y1="30%" x2="70%" y2="90%">
+              <stop offset="0%" stop-color="#FF6363" />
+              <stop offset="60%" stop-color="#DF1E1E" />
+              <stop offset="100%" stop-color="#73090A" />
+            </linearGradient>
+
+            <!-- Wrist Gradient -->
+            <linearGradient id="wristRed" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#9C1011" />
+              <stop offset="45%" stop-color="#E51F20" />
+              <stop offset="75%" stop-color="#FF5D5D" />
+              <stop offset="100%" stop-color="#7A090B" />
+            </linearGradient>
+
+            <!-- Golden Star Gradient -->
+            <linearGradient id="starGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF2A3" />
+              <stop offset="45%" stop-color="#FFD13B" />
+              <stop offset="100%" stop-color="#C68C00" />
+            </linearGradient>
+          </defs>
+
+          <!-- Squircle App Icon Background -->
+          <rect x="0" y="0" width="100" height="100" rx="24" fill="url(#bgGrad)" />
+
+          <!-- Wrist / Arm at the bottom -->
+          <path d="M38,100 C37,92 41,83 48,82 C56,81 61,84 64,88 C67,92 66,100 66,100 Z" fill="url(#wristRed)" />
+
+          <!-- Main Claw (Right Pincer) -->
+          <path d="M48,82 C63,80 79,72 82,57 C85,42 79,28 66,23 C56,19 46,26 44,36 C42,43 45,51 49,57 C52,62 55,67 52,72 C50,75 46,78 48,82 Z" fill="url(#clawRed)" />
+
+          <!-- Highlight/Gloss on Main Claw Back -->
+          <path d="M68,25 C77,29 82,40 80,52 C78,61 69,69 57,75" stroke="#FFA3A3" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.45" />
+
+          <!-- Left Finger (Thumb Pincer) -->
+          <path d="M48,82 C42,80 34,74 30,65 C26,56 26,45 32,36 C34,32 37,32 38,36 C39,40 37,45 39,50 C41,55 45,58 48,60 C51,62 52,65 52,70 C52,75 51,79 48,82 Z" fill="url(#thumbRed)" />
+
+          <!-- Highlights on Left Finger -->
+          <path d="M30,62 C27,53 27,44 32,37" stroke="#FFA3A3" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4" />
+
+          <!-- Textured grooves/details on inside of the claw -->
+          <path d="M45,39 C47,42 49,42 51,39" stroke="#7A090B" stroke-width="1.5" fill="none" stroke-linecap="round" />
+          <path d="M47,47 C49,50 51,50 53,47" stroke="#7A090B" stroke-width="1.5" fill="none" stroke-linecap="round" />
+          <path d="M49,55 C51,58 53,58 55,55" stroke="#7A090B" stroke-width="1.5" fill="none" stroke-linecap="round" />
+
+          <!-- The Golden Star (concave 4-pointed star) with glow -->
+          <g transform="translate(30, 27) rotate(-10)">
+            <path d="M0,-13 C0,-3 3,0 13,0 C3,0 0,3 0,13 C0,3 -3,0 -13,0 C-3,0 0,-3 0,-13 Z" fill="#FFE040" opacity="0.5" />
+            <path d="M0,-9 C0,-2 2,0 9,0 C2,0 0,2 0,9 C0,2 -2,0 -9,0 C-2,0 0,-2 0,-9 Z" fill="url(#starGold)" />
+            <circle cx="0" cy="0" r="1.2" fill="#FFFFFF" />
+          </g>
+        </svg>
+        <span class="logo-text fd">QClaw</span>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-link active" data-slide="0">Opening</button>
+        <button class="nav-link" data-slide="1">Masalah AI</button>
+        <button class="nav-link" data-slide="2">Solusi</button>
+        <button class="nav-link" data-slide="3">3 Pilar</button>
+        <button class="nav-link" data-slide="4">Fitur Remote</button>
+        <button class="nav-link" data-slide="5">Keamanan</button>
+        <button class="nav-link" data-slide="6">Penutup</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       VERTICAL SLIDE CONTAINER
+       ========================================== -->
+  <main class="slide-container" id="slideContainer">
+
+    <!-- SLIDE 1: EPIC OPENING -->
+    <section class="slide" id="slide-0">
+      <div class="slide-content epic-hero">
+        <div class="badge">
+          <span class="bdot"></span>
+          <span class="badge-text">Tren Teknologi Terpanas 2026</span>
+        </div>
+        
+        <div class="epic-title-container">
+          <h1 class="fd main-title">THIS IS <span class="highlight">QCLAW</span></h1>
+          <p class="epic-subtitle">Personal Local AI Agent & Desktop Automation Assistant</p>
+        </div>
+        
+        <div class="epic-cards-intro">
+          <div class="intro-mini-card glass">
+            <h3>Otonom Secara Lokal</h3>
+            <p>Bekerja langsung di dalam sistem operasi komputer Anda, menjaga data tetap privat.</p>
+          </div>
+          <div class="intro-mini-card glass">
+            <h3>Remote Kontrol Total</h3>
+            <p>Kendalikan PC Anda dari mana saja di belahan dunia hanya lewat aplikasi chat.</p>
+          </div>
+          <div class="intro-mini-card glass">
+            <h3>Keamanan Gateway</h3>
+            <p>Teknologi Claw Gateway memblokir setiap perintah berbahaya yang berisiko merusak PC.</p>
+          </div>
+        </div>
+
+        <div class="scroll-hint" onclick="nextSlide()">
+          <span class="scroll-arrow">▼</span>
+          <span class="scroll-text">Scroll ke Bawah untuk Memulai</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: MASALAH TERBESAR AI SAAT INI -->
+    <section class="slide" id="slide-1">
+      <div class="slide-content">
+        <div class="slide-grid">
+          <div class="text-panel">
+            <h2 class="fd section-title">Era Chatbot Pasif Telah Selesai</h2>
+            <div class="paragraph-list">
+              <div class="p-item">
+                <div class="p-num">01</div>
+                <div>
+                  <h3>Chatbot Tradisional Bersifat Pasif</h3>
+                  <p>Model AI besar saat ini hanya pandai berbicara dan menjawab pertanyaan. Mereka tidak bisa bertindak langsung untuk mengoperasikan aplikasi, berkas, atau sistem operasi Anda.</p>
+                </div>
+              </div>
+              <div class="p-item">
+                <div class="p-num">02</div>
+                <div>
+                  <h3>Hambatan Setup AI Agent Mandiri</h3>
+                  <p>Masyarakat awam kesulitan memasang AI Agent open-source sendiri karena membutuhkan konfigurasi Python, setup API Key, penanganan dependency library, dan penggunaan terminal CLI yang rumit dan menakutkan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="visual-panel">
+            <!-- Warning/Struggle Mockup Card -->
+            <div class="console-mockup glass">
+              <div class="console-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="console-title">cmd.exe - pip install openclaw</span>
+              </div>
+              <div class="console-body">
+                <p class="c-line py">$ pip install openclaw-core langchain chromadb</p>
+                <p class="c-line text">Collecting openclaw-core...</p>
+                <p class="c-line err">Error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/</p>
+                <p class="c-line err">Command "python setup.py egg_info" failed with error code 1</p>
+                <p class="c-line text-yellow">WARNING: Target directory is locked by another process.</p>
+                <p class="c-line blink">C:\Users\User> █</p>
+              </div>
+              <div class="console-footer">
+                <p class="footer-msg">Setup AI Agent konvensional penuh dengan hambatan teknis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: SOLUSI QCLAW -->
+    <section class="slide" id="slide-2">
+      <div class="slide-content">
+        <div class="slide-grid">
+          <div class="text-panel">
+            <h2 class="fd section-title">QClaw: AI Agent Tanpa Terminal</h2>
+            <p class="section-desc">Tencent mengembangkan QClaw sebagai jawaban atas kerumitan setup AI Agent, menghadirkan asisten otomatisasi siap pakai untuk pengguna umum.</p>
+            <div class="features-list">
+              <div class="feat-box glass">
+                <div class="feat-icon">⚡</div>
+                <h3>Pemasangan Satu Klik (One-Click Install)</h3>
+                <p>Cukup unduh dan pasang layaknya aplikasi biasa di Windows atau macOS. QClaw mengonfigurasi dependensi secara otomatis di latar belakang.</p>
+              </div>
+              <div class="feat-box glass">
+                <div class="feat-icon">🏠</div>
+                <h3>Sepenuhnya Berjalan Lokal</h3>
+                <p>Menggunakan resource komputer Anda secara efisien, menjaga dokumen penting Anda tetap aman di harddisk lokal tanpa diunggah permanen ke cloud.</p>
+              </div>
+            </div>
+          </div>
+          <div class="visual-panel">
+            <div class="installer-mockup glass">
+              <div class="inst-header">
+                <div class="inst-logo">Q</div>
+                <div>
+                  <span class="inst-title font-sora">QClaw Setup</span>
+                  <span class="inst-ver">Version 1.0.4 - Stable</span>
+                </div>
+              </div>
+              <div class="inst-body">
+                <div class="inst-progress-container">
+                  <div class="inst-progress-bar" style="width: 82%;"></div>
+                </div>
+                <div class="inst-status">
+                  <p class="inst-status-text">Menginstal framework OpenClaw & runtime lokal...</p>
+                  <p class="inst-percentage font-sora">82%</p>
+                </div>
+                <div class="inst-logs">
+                  <p>✔ Checking system compatibility (Windows 11 x64)...</p>
+                  <p>✔ Downloading localized weight components...</p>
+                  <p>✔ Configuring local security database...</p>
+                  <p class="c-green">⚡ Setting up virtual environment runtimes...</p>
+                </div>
+              </div>
+              <div class="inst-footer">
+                <span class="inst-btn disabled">Kembali</span>
+                <span class="inst-btn active pulsate">Menginstal...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: TIGA PILAR UTAMA PENGGUNAAN -->
+    <section class="slide" id="slide-3">
+      <div class="slide-content">
+        <h2 class="fd section-title center">Tiga Pilar Fungsional QClaw</h2>
+        <p class="section-desc center">QClaw membagi fungsionalitas asisten otonomnya ke dalam tiga skenario terkonfigurasi:</p>
+        
+        <div class="pillars-grid">
+          <div class="pillar-card glass">
+            <div class="p-icon">💼</div>
+            <h3 class="fd">QClaw It</h3>
+            <p class="p-tagline">Otomatisasi Tugas Administratif</p>
+            <p>Membantu merapikan berkas-berkas berantakan, menyortir faktur pajak ke folder yang tepat, memesan tiket konser secara otomatis, hingga merancang rencana perjalanan lengkap dengan reservasi.</p>
+            <div class="p-badge-list">
+              <span>Sortir File</span>
+              <span>Laporan Pajak</span>
+              <span>Tiket Konser</span>
+            </div>
+          </div>
+          
+          <div class="pillar-card glass">
+            <div class="p-icon">🌱</div>
+            <h3 class="fd">QClaw Daily</h3>
+            <p class="p-tagline">Kesehatan & Gaya Hidup Harian</p>
+            <p>Menjadi konsultan kesehatan pribadi dengan menyusun jadwal olahraga 12 minggu, bertindak sebagai penata gaya rambut/pakaian lewat analisis foto, hingga mengatur musik dan video tidur di malam hari.</p>
+            <div class="p-badge-list">
+              <span>Program Diet</span>
+              <span>Personal Stylist</span>
+              <span>Sleep Consultant</span>
+            </div>
+          </div>
+          
+          <div class="pillar-card glass">
+            <div class="p-icon">🚀</div>
+            <h3 class="fd">QClaw Up</h3>
+            <p class="p-tagline">Karir & Produktivitas Kerja</p>
+            <p>Melakukan riset kompetitor bisnis secara berkala di internet, menganalisis ulasan pengguna, memformulasikan draf promosi pemasaran multi-channel, serta menyusun kalender konten media sosial.</p>
+            <div class="p-badge-list">
+              <span>Riset Pasar</span>
+              <span>SEO Articles</span>
+              <span>Content Calendar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: KEMAMPUAN REMOTE CONTROL Telegram & Discord -->
+    <section class="slide" id="slide-4">
+      <div class="slide-content">
+        <div class="slide-grid reverse">
+          <div class="text-panel">
+            <h2 class="fd section-title">Kendalikan PC Anda Lewat Chat</h2>
+            <p class="section-desc">Fitur paling revolusioner dari QClaw adalah kemampuan mengontrol sistem operasi komputer hampir sepenuhnya dari jarak jauh menggunakan Telegram atau Discord.</p>
+            
+            <div class="list-highlights">
+              <div class="h-item">
+                <div class="h-num">💬</div>
+                <div>
+                  <h3>Aplikasi Chat Sebagai Antarmuka</h3>
+                  <p>Tidak perlu aplikasi khusus. Cukup kirim pesan teks biasa ke bot Telegram atau Discord Anda yang sudah terhubung dengan QClaw di PC.</p>
+                </div>
+              </div>
+              <div class="h-item">
+                <div class="h-num">🧬</div>
+                <div>
+                  <h3>Tutor Store (Adopsi Agent Ahli)</h3>
+                  <p>Anda dapat mengadopsi profil AI Agent yang sudah dilatih oleh para ahli (kebugaran, keuangan, dll.) langsung dari katalog store dan memasangnya di QClaw Anda.</p>
+                </div>
+              </div>
+              <div class="h-item">
+                <div class="h-num">🧠</div>
+                <div>
+                  <h3>Long-term Memory (Memori Privat)</h3>
+                  <p>QClaw mempelajari preferensi, kebiasaan kerja, dan rutinitas mingguan Anda, berkembang menjadi asisten yang semakin cerdas tanpa membagikan data tersebut ke publik.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="visual-panel">
+            <!-- Mockup Telegram Remote Control View -->
+            <div class="telegram-mockup glass">
+              <div class="tg-header">
+                <div class="tg-back">◀</div>
+                <div class="tg-avatar">Q</div>
+                <div class="tg-info">
+                  <span class="tg-name fd">QClaw PC Agent</span>
+                  <span class="tg-status">● Online</span>
+                </div>
+                <div class="tg-menu">⋮</div>
+              </div>
+              <div class="tg-chat-body">
+                <div class="chat-date">HARI INI</div>
+                
+                <div class="chat-bubble user">
+                  Tolong rapikan folder unduhan saya dan kumpulkan semua invoice pajak tahun 2025 ke folder baru.
+                </div>
+                
+                <div class="chat-bubble bot">
+                  <div class="bot-badge">QClaw</div>
+                  Memproses perintah Anda secara lokal... <br>
+                  🔍 Memindai folder <code>C:\Users\Downloads</code>... <br>
+                  📂 Ditemukan 42 berkas bertipe invoice pajak 2025.<br>
+                  ✅ Berhasil memindahkan seluruh berkas ke folder baru: <code>Documents\Pajak_2025</code>.<br>
+                  📄 Membuat berkas rangkuman data: <code>_DAFTAR_INVOICE.xlsx</code>.
+                </div>
+                
+                <div class="chat-bubble user font-monospace">
+                  /remote run-cmd "systeminfo"
+                </div>
+                
+                <div class="chat-bubble bot">
+                  <div class="bot-badge">QClaw</div>
+                  Mengeksekusi perintah command-line jarak jauh...<br>
+                  💻 <b>OS Name:</b> Microsoft Windows 11 Home<br>
+                  💻 <b>System Model:</b> Custom PC Desktop<br>
+                  💻 <b>Total Physical Memory:</b> 32,768 MB<br>
+                  Semua sistem berjalan normal.
+                </div>
+              </div>
+              <div class="tg-input-bar">
+                <span class="tg-attach">📎</span>
+                <div class="tg-input-placeholder">Tulis pesan remote control...</div>
+                <span class="tg-send">▶</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: ARSITEKTUR & KEAMANAN (Claw Gateway) -->
+    <section class="slide" id="slide-5">
+      <div class="slide-content">
+        <div class="slide-grid">
+          <div class="text-panel">
+            <h2 class="fd section-title">Claw Gateway: Perisai Keamanan Lokal</h2>
+            <p class="section-desc">Karena QClaw memiliki akses mendalam untuk mengontrol PC Anda secara remote, Tencent menyematkan sistem keamanan tingkat lanjut bernama **Claw Gateway**.</p>
+            
+            <div class="sec-points">
+              <div class="sec-box glass">
+                <span class="sec-icon font-sora">1</span>
+                <div>
+                  <h3>Deteksi Perintah Berbahaya</h3>
+                  <p>Setiap perintah remote (lewat Telegram/Discord) akan dianalisis terlebih dahulu di gerbang keamanan sebelum dieksekusi oleh mesin AI Agent.</p>
+                </div>
+              </div>
+              <div class="sec-box glass">
+                <span class="sec-icon font-sora">2</span>
+                <div>
+                  <h3>Pencegahan Kerusakan Sistem</h3>
+                  <p>Perintah yang mencoba menghapus file sistem penting (misalnya folder System32 di Windows) atau melakukan instalasi malware akan dideteksi dan langsung diblokir.</p>
+                </div>
+              </div>
+              <div class="sec-box glass">
+                <span class="sec-icon font-sora">3</span>
+                <div>
+                  <h3>Konfirmasi Manual</h3>
+                  <p>Untuk tindakan berisiko sedang, Claw Gateway akan memicu notifikasi konfirmasi manual di PC/ponsel Anda sebelum melanjutkan tugas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="visual-panel">
+            <!-- Claw Gateway Active Shield Visual -->
+            <div class="shield-mockup glass">
+              <div class="shield-header font-sora">
+                <span class="shield-pulse">🛡️</span>
+                CLAW GATEWAY MONITOR
+              </div>
+              <div class="shield-body">
+                <div class="threat-status warning animate-pulse">
+                  <span class="threat-icon">⚠️</span>
+                  <div>
+                    <h4>Aktivitas Mencurigakan Terdeteksi</h4>
+                    <p>Mencoba mengeksekusi perintah modifikasi sistem file.</p>
+                  </div>
+                </div>
+                
+                <div class="log-details font-monospace">
+                  <p>[01:42:05] Chat Source: Discord Remote Control</p>
+                  <p>[01:42:05] Command: <span class="c-red">rmdir /s /q C:\Windows\System32</span></p>
+                  <p>[01:42:06] Rule Triggered: CRITICAL_SYSTEM_PATH_LOCK</p>
+                  <p class="c-red font-bold animate-blink">--- [BLOCKED BY CLAW GATEWAY] ---</p>
+                </div>
+                
+                <div class="security-radar">
+                  <div class="radar-line"></div>
+                  <p>Menganalisis integritas perintah...</p>
+                </div>
+              </div>
+              <div class="shield-footer">
+                <span class="sh-btn resolve">Abaikan & Blokir</span>
+                <span class="sh-btn override">Izinkan (Butuh PIN)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: PENUTUP & TANYA JAWAB -->
+    <section class="slide" id="slide-6">
+      <div class="slide-content epic-conclusion">
+        <h2 class="fd conclusion-title">Selamat Datang di Era <br><span class="highlight">AI Agent Lokal</span></h2>
+        <p class="conclusion-desc text-center">QClaw mendemokratisasi asisten otomatisasi desktop yang otonom, privat, dan mudah digunakan oleh semua orang tanpa perlu menjadi programmer.</p>
+        
+        <div class="conclusion-stats">
+          <div class="stat-box glass">
+            <span class="stat-val font-sora">1</span>
+            <span class="stat-lbl">Klik Pemasangan</span>
+          </div>
+          <div class="stat-box glass">
+            <span class="stat-val font-sora">100%</span>
+            <span class="stat-lbl">Privasi Lokal</span>
+          </div>
+          <div class="stat-box glass">
+            <span class="stat-val font-sora">24/7</span>
+            <span class="stat-lbl">Otomatisasi Otonom</span>
+          </div>
+        </div>
+
+        <div class="qna-card glass">
+          <h3 class="fd">Sesi Tanya Jawab</h3>
+          <p>Terima kasih atas perhatian Anda. Silakan jika ada pertanyaan dari Bapak/Ibu Dosen atau rekan-rekan mahasiswa.</p>
+          <div class="badge-invite">FOUNDING QCLAWS · #00001 - #20000</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FLOATING CONTROLS & INDICATORS
+       ========================================== -->
+  <!-- Vertical Dot Indicators -->
+  <div class="vertical-nav-dots" id="dotsContainer">
+    <div class="dot-indicator active" data-slide="0" title="Opening"></div>
+    <div class="dot-indicator" data-slide="1" title="Masalah AI"></div>
+    <div class="dot-indicator" data-slide="2" title="Solusi"></div>
+    <div class="dot-indicator" data-slide="3" title="3 Pilar"></div>
+    <div class="dot-indicator" data-slide="4" title="Fitur Remote"></div>
+    <div class="dot-indicator" data-slide="5" title="Keamanan"></div>
+    <div class="dot-indicator" data-slide="6" title="Penutup"></div>
+  </div>
+
+  <!-- Floating Navigation Arrow Buttons -->
+  <div class="floating-arrows">
+    <button class="arrow-btn" id="arrowUp" onclick="prevSlide()" title="Slide Sebelumnya (Panah Atas)">▲</button>
+    <button class="arrow-btn" id="arrowDown" onclick="nextSlide()" title="Slide Berikutnya (Panah Bawah)">▼</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
