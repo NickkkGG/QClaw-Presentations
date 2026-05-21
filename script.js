@@ -215,12 +215,30 @@ function resetAndRunTerminal() {
 }
 
 // --- Slide 3: Installer Loading Simulation ---
+function toggleShowcase() {
+  const showcase = document.getElementById('qclawShowcase');
+  if (showcase) {
+    showcase.classList.toggle('flipped');
+  }
+}
+
 function resetAndRunInstaller() {
   const progressBar = document.querySelector('.inst-progress-bar');
   const percentEl = document.querySelector('.inst-percentage');
   const logsEl = document.querySelector('.inst-logs');
+  const instBtnNext = document.getElementById('instBtnNext');
+  const showcase = document.getElementById('qclawShowcase');
   
   if (!progressBar || !percentEl || !logsEl) return;
+  
+  if (showcase) showcase.classList.remove('flipped');
+  
+  if (instBtnNext) {
+    instBtnNext.textContent = 'Menginstal...';
+    instBtnNext.classList.add('pulsate', 'disabled');
+    instBtnNext.classList.remove('active');
+    instBtnNext.onclick = null;
+  }
   
   progressBar.style.animation = 'none';
   progressBar.style.width = '0%';
@@ -232,7 +250,7 @@ function resetAndRunInstaller() {
     '✔ Downloading localized weight components...',
     '✔ Configuring local security database...',
     '⚡ Setting up virtual environment runtimes...',
-    '✔ Instaling main QClaw Agent engine packages...',
+    '✔ Installing main QClaw Agent engine packages...',
     '✔ Injecting Discord & Telegram Webhook integration layers...',
     '🎉 Instalasi selesai! QClaw siap digunakan.'
   ];
@@ -249,6 +267,16 @@ function resetAndRunInstaller() {
     if (currentPercent >= 100) {
       currentPercent = 100;
       clearInterval(timer);
+      
+      // Installer done! Enable click to view workspace
+      if (instBtnNext) {
+        instBtnNext.textContent = 'Buka Workspace';
+        instBtnNext.classList.remove('disabled', 'pulsate');
+        instBtnNext.classList.add('active');
+        instBtnNext.onclick = () => {
+          toggleShowcase();
+        };
+      }
     }
     
     const displayPercent = Math.floor(currentPercent);

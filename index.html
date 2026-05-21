@@ -251,32 +251,68 @@
             </div>
           </div>
           <div class="visual-panel">
-            <div class="installer-mockup glass">
-              <div class="inst-header">
-                <div class="inst-logo">Q</div>
-                <div>
-                  <span class="inst-title font-sora">QClaw Setup</span>
-                  <span class="inst-ver">Version 1.0.4 - Stable</span>
+            <!-- 3D Flip Card Container -->
+            <div class="showcase-card" id="qclawShowcase">
+              <div class="showcase-card-inner">
+                
+                <!-- Front Side: Installer Mockup -->
+                <div class="showcase-front">
+                  <div class="installer-mockup glass">
+                    <div class="inst-header">
+                      <div class="inst-logo">
+                        <svg viewBox="0 0 100 100" style="width:100%; height:100%;" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" rx="20" fill="#E51F20" />
+                          <circle cx="50" cy="50" r="22" fill="#FFF" opacity="0.2" />
+                          <!-- Minimalist Claw Symbol inside the logo box -->
+                          <path d="M40,50 C35,42 40,32 50,32 C60,32 65,42 60,50 Z" fill="#FFF" />
+                          <circle cx="45" cy="45" r="5" fill="#E51F20" />
+                        </svg>
+                      </div>
+                      <div>
+                        <span class="inst-title font-sora">QClaw Setup</span>
+                        <span class="inst-ver">Version 1.0.4 - Stable</span>
+                      </div>
+                    </div>
+                    <div class="inst-body">
+                      <div class="inst-progress-container">
+                        <div class="inst-progress-bar" style="width: 0%;"></div>
+                      </div>
+                      <div class="inst-status">
+                        <p class="inst-status-text">Menginstal framework OpenClaw & runtime lokal...</p>
+                        <p class="inst-percentage font-sora">0%</p>
+                      </div>
+                      <div class="inst-logs">
+                        <!-- logs will be populated dynamically -->
+                      </div>
+                    </div>
+                    <div class="inst-footer">
+                      <span class="inst-btn disabled" id="instBtnBack">Kembali</span>
+                      <span class="inst-btn active pulsate" id="instBtnNext">Menginstal...</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="inst-body">
-                <div class="inst-progress-container">
-                  <div class="inst-progress-bar" style="width: 82%;"></div>
+
+                <!-- Back Side: App Workspace Mockup (Screenshot) -->
+                <div class="showcase-back">
+                  <div class="workspace-mockup glass">
+                    <div class="ws-header">
+                      <div class="ws-dots">
+                        <!-- Click to close / flip back to installer -->
+                        <span class="ws-dot ws-close" onclick="toggleShowcase()" title="Kembali ke Installer"></span>
+                        <span class="ws-dot ws-min"></span>
+                        <span class="ws-dot ws-max"></span>
+                      </div>
+                      <span class="ws-title font-sora">QClaw Workspace - Office Mode</span>
+                    </div>
+                    <div class="ws-body">
+                      <img src="Screenshot 2026-05-22 015615.png" alt="QClaw Interface" class="workspace-img">
+                      <div class="ws-overlay-hint">
+                        <span>💡 Virtual Office Mode: Lobster Agent hidup & bekerja di desktop Anda!</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="inst-status">
-                  <p class="inst-status-text">Menginstal framework OpenClaw & runtime lokal...</p>
-                  <p class="inst-percentage font-sora">82%</p>
-                </div>
-                <div class="inst-logs">
-                  <p>✔ Checking system compatibility (Windows 11 x64)...</p>
-                  <p>✔ Downloading localized weight components...</p>
-                  <p>✔ Configuring local security database...</p>
-                  <p class="c-green">⚡ Setting up virtual environment runtimes...</p>
-                </div>
-              </div>
-              <div class="inst-footer">
-                <span class="inst-btn disabled">Kembali</span>
-                <span class="inst-btn active pulsate">Menginstal...</span>
+
               </div>
             </div>
           </div>
