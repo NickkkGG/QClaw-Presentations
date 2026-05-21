@@ -276,6 +276,14 @@ function resetAndRunInstaller() {
         instBtnNext.onclick = () => {
           toggleShowcase();
         };
+
+        // Auto-press button after 1.5 seconds (1500ms)
+        const autoPressTimeout = setTimeout(() => {
+          if (showcase && !showcase.classList.contains('flipped')) {
+            toggleShowcase();
+          }
+        }, 1500);
+        activeTimeouts.push(autoPressTimeout);
       }
     }
     
